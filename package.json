@@ -1,10 +1,10 @@
 {
   "name": "bain-challenge",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bain coding challenge",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/StevenPurn/bain-challenge#readme",
   "dependencies": {
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "jest": "^23.4.0"
   }
 }
