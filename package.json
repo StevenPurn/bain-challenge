@@ -1,0 +1,22 @@
+{
+  "name": "bain-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StevenPurn/bain-challenge.git"
+  },
+  "author": "Steven Purn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StevenPurn/bain-challenge/issues"
+  },
+  "homepage": "https://github.com/StevenPurn/bain-challenge#readme",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
