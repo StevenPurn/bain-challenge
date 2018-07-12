@@ -34,12 +34,12 @@ const isInputValid = (search, value) => {
     default:
       return false;
   }
-}
+};
 
 const parseInput = (search, value) => {
   const greaterThan = search === 'find_after';
   findResults(inputToProperty[search], value, greaterThan);
-}
+};
 
 const findResults = (property, value, greaterThan) => {
   let results = '';
@@ -48,7 +48,7 @@ const findResults = (property, value, greaterThan) => {
   const addResult = (company) => {
     results += company.company_name + ', ';
     count += 1;
-  }
+  };
 
   data.forEach((company) => {
     if (property === 'year_founded') {
@@ -65,6 +65,22 @@ const findResults = (property, value, greaterThan) => {
       addResult(company);
     }
   });
-  console.log(results);
-  console.log(count);
-}
+  printResults(results, count);
+};
+
+const printResults = (results, count) => {
+  if (count > 0) {
+    console.log('Company Names:');
+    console.log(results.slice(0, -2) + '\n');
+    console.log('Number of Companies:' + count);
+  } else {
+    console.log('No results found, try refining your search');
+  }
+};
+
+module.exports = {
+  printResults,
+  findResults,
+  parseInput,
+  isInputValid,
+};
