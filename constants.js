@@ -25,3 +25,18 @@ const states = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC',
                 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP',
                 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN',
                 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ];
+
+const inputToProperty = {
+  locate: 'state',
+  find_companies_between_size: 'full_time_employees',
+  find_type: 'company_category',
+  find_after: 'year_founded',
+  find_before: 'year_founded',
+};
+
+module.exports = {
+  inputToProperty,
+  states,
+  types,
+  sizes,
+};
