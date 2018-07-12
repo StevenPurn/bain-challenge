@@ -1,4 +1,4 @@
-const { types, states, sizes } = require('constants');
+const { types, states, sizes, inputToProperty } = require('./constants');
 const { readFile } = require('fs');
 let data;
 
@@ -12,7 +12,7 @@ if (process.argv[2]) {
       const search = process.argv[3];
       const value = process.argv[4];
       if (isInputValid(search, value)) {
-        console.log('Input is valid');
+        parseInput(search, value);
       } else {
         console.log('Invalid input, please check your syntax');
       }
@@ -34,4 +34,37 @@ const isInputValid = (search, value) => {
     default:
       return false;
   }
+}
+
+const parseInput = (search, value) => {
+  const greaterThan = search === 'find_after';
+  findResults(inputToProperty[search], value, greaterThan);
+}
+
+const findResults = (property, value, greaterThan) => {
+  let results = '';
+  let count = 0;
+
+  const addResult = (company) => {
+    results += company.company_name + ', ';
+    count += 1;
+  }
+
+  data.forEach((company) => {
+    if (property === 'year_founded') {
+      if (greaterThan) {
+        if (company[property] >= value) {
+          addResult(company);
+        }
+      } else {
+        if (company[property] <= value) {
+          addResult(company);
+        }
+      }
+    } else if (company[property] === value) {
+      addResult(company);
+    }
+  });
+  console.log(results);
+  console.log(count);
 }
