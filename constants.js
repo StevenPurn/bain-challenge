@@ -1,5 +1,8 @@
+// Maps to companies_between_size query
 const sizes = ['1-10', '11-50', '51-200', '201-500', '501-1,000',
                 '1,001-5,000', '5,001-10,000', '10,001+'];
+
+// Maps to type query
 const types = [`N/A`,
                'Aerospace and Defense',
                'Business & Legal Services',
@@ -19,6 +22,8 @@ const types = [`N/A`,
                'Research & Consulting',
                'Scientific Research',
                'Transportation'];
+
+// Maps to locate query
 const states = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC',
                 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS',
                 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO',
@@ -26,6 +31,7 @@ const states = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC',
                 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN',
                 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ];
 
+// find_after & find_before are only validated as numbers
 const inputToProperty = {
   locate: 'state',
   find_companies_between_size: 'full_time_employees',
