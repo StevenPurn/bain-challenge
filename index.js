@@ -1,6 +1,6 @@
-const { types, states, sizes, inputToProperty } = require('./constants');
 const { readFile } = require('fs');
-let data;
+const { types, states, sizes, inputToProperty } = require('./constants');
+let data = require('./test-data.json');
 
 if (process.argv[2]) {
   readFile(process.argv[2], 'utf8', (err, fileContents) => {
@@ -72,7 +72,7 @@ const printResults = (results, count) => {
   if (count > 0) {
     console.log('Company Names:');
     console.log(results.slice(0, -2) + '\n');
-    console.log('Number of Companies:' + count);
+    console.log('Number of Companies: ' + count);
   } else {
     console.log('No results found, try refining your search');
   }
